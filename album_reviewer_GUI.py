@@ -20,7 +20,7 @@ from PyQt5.QtCore import Qt, QSettings, pyqtSignal
 from io import BytesIO
 from PIL import Image, ImageGrab
 
-from colour_temp import cluster_image, convert_colour
+from colour_modules import cluster_image, convert_colour
 
 load_dotenv()
 
@@ -500,7 +500,7 @@ class AlbumReviewer(QWidget):
         img_downsampl = img[::downsampl, ::downsampl]
         img_clusters, img_labels = cluster_image(img_downsampl, sample_space, output_space='sRGB',
                                                  clustering_method='mean-shift', quantile=0.125, return_labels=True)
-                                                # clustering_method='k-means', n_clusters=range(8, 10), n_runs=1, return_labels=True)
+                                                 # clustering_method='k-means', n_clusters=range(8, 10), n_runs=1, return_labels=True)
 
         self.colours = [convert_colour(value, 'sRGB', 'Hex') for value in img_clusters]
         

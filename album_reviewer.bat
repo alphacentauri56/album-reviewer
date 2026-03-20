@@ -1,3 +1,3 @@
 @echo off
-python "C:\Users\thoma\Documents\python_scripts\Personal\Spotify API\Get Albums GUI copy.py"
+python "C:\Users\thoma\Documents\python_scripts\album-reviewer\album_reviewer_GUI.py"
 pause
